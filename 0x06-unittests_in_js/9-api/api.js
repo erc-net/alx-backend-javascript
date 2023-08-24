@@ -1,18 +1,20 @@
 const express = require('express');
 
+const HOST = '127.0.0.1';
+const PORT = 7865;
+
 const app = express();
-const port = 7865;
 
-app.get('/', (request, response) => {
-  response.send('Welcome to the payment system');
+app.get('/', (req, res) => {
+  res.send('Welcome to the payment system');
 });
 
-app.get('/cart/:id([0-9]+)', (request, response) => {
-    response.send(`Payment methods for cart ${request.params.id}`);
+app.get('/cart/:id([0-9]*)', (req, res) => {
+  res.send(`Payment methods for cart ${req.params.id}`);
 });
 
-app.listen(port, () => {
-    console.log(`API available on localhost port ${port}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server is live at ${HOST}:${PORT}`);
 });
 
 module.exports = app;

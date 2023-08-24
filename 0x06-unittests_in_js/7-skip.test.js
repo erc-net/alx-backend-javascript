@@ -1,3 +1,6 @@
+/**
+ * Skip tests
+ */
 const { expect } = require('chai');
 
 describe('Testing numbers', () => {

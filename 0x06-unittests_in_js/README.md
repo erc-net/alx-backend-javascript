@@ -1,36 +1,78 @@
-<p>
-<img width="260" height="170" src="https://www.flaticon.com/svg/static/icons/svg/1205/1205526.svg" align="right" >
-</p>
+# 0x06. Unittests in JS
 
-# :colombia: 0x09. Unittests and Integration Tests
+## About 
+- Using `Mocha` to develop test suites
+- Using assertion libraries `Node` and `Chai`
+- Presenting long test suites.
+- When and how to use spies, stubs and hooks.
+- Unit testings with Async functions.
+- Writing integration tests with a small node server.
 
-## Prerequisites
+## Tasks
+0. Unittest with `mocha` test framework and node's `assertion` library.
+    - Files:
+        - [package.json](package.json)
+        - [0-calcul.js](0-calcul.js)
+        - [0-calcul.test.js](0-calcul.test.js)
 
-- All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 `(version 3.7)`
-- All your files should end with a new line
-- The first line of all your files should be exactly `#!/usr/bin/env python3`
-- A README.md file, at the root of the folder of the project, is mandatory
-- Your code should use the pycodestyle style `(version 2.5)`
-- All your files must be executable
-- All your modules should have a documentation `(python3 -c 'print(__import__("my_module").__doc__)')`
-- All your classes should have a documentation `(python3 -c 'print(__import__("my_module").MyClass.__doc__)')`
-- All your functions (inside and outside a class) should have a documentation `(python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')`
-- A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-- All your functions and coroutines must be type-annotated.
+1. Combined `mocha` descriptions.
+    - Files:
+        - [1-calcul.js](1-calcul.js)
+        - [1-calcul.test.js](1-calcul.test.js)
 
-## Run
+2. Basic testing with `chai` assertion library.
+    - Files:
+        - [2-calcul_chai.js](2-calcul_chai.js)
+        - [2-calcul_chai.test.js](2-calcul_chai.test.js)
 
-```
-$ python -m unittest path/to/test_file.py
-```
+3. Testing with `sinon` spies.
+    - Files:
+        - [utils.js](utils.js)
+        - [3-payment.js](3-payment.js)
+        - [3-payment.test.js](3-payment.test.js)
 
-## Files
+4. Testing with `sinon` stubs.
+    - Files:
+        - [4-payment.js](4-payment.js)
+        - [4-payment.test.js](4-payment.test.js)
 
-| Files              | Description       |
-| ------------------ | ----------------- |
-| **README.md**      | Documentation     |
-| **utils.py**       | Utilities         |
-| **client.py**      | Clients           |
-| **fixtures.py**    | Fixtures          |
-| **test_utils.py**  | Reporting utils   |
-| **test_client.py** | Reporting clients |
+5. Testing with `sinon` hooks.
+    - Files:
+        - [5-payment.js](5-payment.js)
+        - [5-payment.test.js](5-payment.test.js)
+
+6. Testing asynchronous function and promises.
+    - Files:
+        - [6-payment_token.js](6-payment_token.js)
+        - [6-payment_token.test.js](6-payment_token.test.js)
+
+7. Skipping tests in `mocha`.
+    - Files: [7-skip.test.js](7-skip.test.js)
+
+8. Basic integration tests of minimal `express` server.
+    - Routes:
+        - `GET /`: returns home page.
+    - Files:
+        - [8-api/package.json](8-api/package.json)
+        - [8-api/api.js](8-api/api.js)
+        - [8-api/api.test.js](8-api/api.test.js)
+
+9. Regex integration testing of minimal `express` server.
+    - Routes:
+        - `GET /`: returns home page.
+        - `GET /cart/:id`: returns payment methods for cart id.
+    - Files:
+        - [api/api.js](api/api.js)
+        - [9-api/api.test.js](9-api/api.test.js)
+        - [9-api/package.js](9-api/package.js)
+
+10. Deep equality and post integration testing of minimal `express` server.
+    - Routes:
+        - `GET /`: returns home page.
+        - `GET /cart/:id`: returns payment methods for cart id.
+        - `GET /available_payments`: returns available payment methods.
+        - `GET /login`: returns login message (form parameter: `userName`)
+    - Files:
+        - [10-api/api.js](10-api/api.js)
+        - [10-api/api.test.js](10-api/api.test.js)
+        - [10-api/package.json](10-api/package.json)
